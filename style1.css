@@ -11,15 +11,104 @@
     font-weight: bold;
 }
 
-#main{
+#carouselExampleIndicators{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#first{
+    background-color: darkseagreen;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    width: 80%;
+    height: 500px;
+}
+
+#second{
+    background-color: lavender;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    height: 500px;
+}
+
+#third{
+    background-color: skyblue;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
     height: 500px;
 }
 
 .card-body{
     text-align: center;
+    font-size: 1rem;
+}
+
+#first-text{
+    font-weight: bold;
+    margin-top: 80px;
+    color: white;
+}
+
+#second-text{
+    font-weight: bold;
+    margin-top: 80px;
+    color: black;
+}
+
+#third-text{
+    font-weight: bold;
+    margin-top: 40px;
+    color: black;
+}
+
+.btn{
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+#first-line{
+    border-top-color: white;
+    width: 80%;
+}
+
+#second-line{
+    border-top-color: black;
+    width: 80%;
+}
+
+#third-line{
+    border-top-color: white;
+    width: 80%;
+}
+
+.foot{
+    margin-top: 40px;
+    background-color: snow;
+}
+
+#footer-text{
+    text-align: center;
+    color: gray;
+    padding: 30px;
+    font-size: 0.8rem;
+}
+
+.footer-btn{
+    width: 3%;
+    background-color: snow;
+    border: 0;
+}
+
+.img{
+    width: 20px;
+    object-fit: cover;
+    margin-right: 5px;
 }

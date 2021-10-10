@@ -13,22 +13,82 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Data Analytics Page 📝</a>
+        <a class="navbar-brand" href="index.html">Data Analytics Note 📝</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">경영 데이터 분석2</a>
+                <a class="nav-item nav-link" href="./ba2/ba2Form.html">경영 데이터 분석2</a>
                 <a class="nav-item nav-link" href="#">R로 배우는 데이터 분석 입문</a>
                 <a class="nav-item nav-link" href="#">개발자 소개</a>
             </div>
         </div>
     </nav>
-    <div class="card" id="main">
-        <div class="card-body">
-            경영데이터분석2와 R로 배우는 데이터 분석 입문 학습 내용을 기록한 페이지입니다.
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card" id="first">
+                    <div class="card-body" id="first-text">
+                        <h2>This Note is</h2>
+                        <hr id="first-line"><br>
+                        경영 데이터 분석2와<br><br>
+                        R로 배우는 데이터 분석 입문을 듣고<br><br>
+                        학습한 내용을 정리하는 용도입니다.<br><br>
+                    </div>
+                    <a type="button" class="btn btn-light">개발자 소개로 이동 👀</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card" id="second">
+                    <div class="card-body" id="second-text">
+                        <h2>경영데이터분석2</h2>
+                        <hr id="second-line"><br>
+                        경영 데이터 분석2 학습시간에 <br><br>
+                        배웠던 내용들을 <br><br>
+                        정리한 페이지입니다. <br><br>
+                    </div>
+                    <a type="button" class="btn btn-light" href="ba2/ba2Form.html">경데분2로 이동 🔍</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card" id="third">
+                    <div class="card-body">
+                        <div class="card-body" id="third-text">
+                            <h2>R로 배우는 데이터 분석 입문</h2>
+                            <hr id="third-line"><br>
+                            R로 배우는 데이터 분석 입문 시간에 <br><br>
+                            배웠던 내용들을 <br><br>
+                            정리한 페이지입니다. <br><br>
+                        </div>
+                        <a type="button" class="btn btn-light">알데분으로 이동 🔍</a>
+                    </div>
+                </div>
+            </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="foot" id="footer">
+        <h6 id="footer-text" >made.by.ssook<br><br>
+            <a class="footer-btn" href="https://github.com/ssook1222" target='_blank'>
+                <img class="img" src="./github.png">
+            </a>
+            <a class="footer-btn" href="https://velog.io/@ssook1222" target='_blank'>
+                <img class="img" src="./vimeo.png">
+            </a>
+        </h6>
     </div>
 
 </body>
