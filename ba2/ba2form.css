@@ -47,6 +47,14 @@
 
 .wrap{
     display: block;
-    margin: auto;
+    margin: 35px auto;
     width: 80%;
+}
+#fat{
+    margin-top: 30px;
+}
+.language-r{
+    background-color: black;
+    color: snow;
+    padding: 10px;
 }
