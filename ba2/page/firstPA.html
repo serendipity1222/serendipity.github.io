@@ -1,0 +1,528 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Business Analytics & R Data Analytics</title>
+    <style type="text/css">
+    .inline {
+      background-color: #f7f7f7;
+      border:solid 1px #B0B0B0;
+    }
+    .error {
+        font-weight: bold;
+        color: #FF0000;
+    }
+    .warning {
+        font-weight: bold;
+    }
+    .message {
+        font-style: italic;
+    }
+    .source, .output, .warning, .error, .message {
+        padding: 0 1em;
+      border:solid 1px #F7F7F7;
+    }
+    .source {
+      background-color: #f5f5f5;
+    }
+    .left {
+      text-align: left;
+    }
+    .right {
+      text-align: right;
+    }
+    .center {
+      text-align: center;
+    }
+    .hl.num {
+      color: #AF0F91;
+    }
+    .hl.str {
+      color: #317ECC;
+    }
+    .hl.com {
+      color: #AD95AF;
+      font-style: italic;
+    }
+    .hl.opt {
+      color: #000000;
+    }
+    .hl.std {
+      color: #585858;
+    }
+    .hl.kwa {
+      color: #295F94;
+      font-weight: bold;
+    }
+    .hl.kwb {
+      color: #B05A65;
+    }
+    .hl.kwc {
+      color: #55aa55;
+    }
+    .hl.kwd {
+      color: #BC5A65;
+      font-weight: bold;
+    }
+    </style>
+    <title>1차 팀 과제 관련</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
+        h6,p{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .nav-item{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .ans{
+            text-align:center
+        }
+        .card{
+            width: 80%;
+            display: block;
+            margin: auto;
+        }
+        .img{
+            width: 20px;
+            object-fit: cover;
+            margin-right: 5px;
+        }
+        .foot{
+            margin-top: 40px;
+            background-color: snow;
+        }
+        #footer-text{
+            text-align: center;
+            color: gray;
+            padding: 30px;
+            font-size: 0.8rem;
+        }
+        .footer-btn{
+            width: 3%;
+            background-color: snow;
+            border: 0;
+        }
+        #navbar-example2{
+            width: 80%;
+        }
+        .q{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav style="margin-bottom: 30px" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="../../index.html">Data Analytics Note 📝</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="../ba2Form.html">경영 데이터 분석2</a>
+            <a class="nav-item nav-link" href="#">R로 배우는 데이터 분석 입문</a>
+            <a class="nav-item nav-link" href="#">개발자 소개</a>
+        </div>
+    </div>
+</nav>
+
+<div class="card">
+    <nav id="navbar-example2" class="navbar navbar-light bg-black">
+        <h5 href="#">1차 팀 과제 관련</h5>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#one">@문제1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#two">@문제2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#three">@문제3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#four">@문제4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#five">@문제5</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#six">@문제6</a>
+            </li>
+        </ul>
+    </nav>
+    <hr>
+    <p style="text-align: center"> ✅ 위의 @문항번호를 누르면 해당 문제로 이동합니다.</p>
+    <hr>
+<h6 class="q" id="one">문제1: 주(state)별로 미성년인구백분율 평균을 구했을 때, 평균이 가장 낮은 지역과 평균을 각각 구하시오.</h6>
+<hr>
+<h6 class="ans">정답 <br><br> 평균이 가장 낮은 지역 : IL <br> 평균이 가장 높은 지역 : OH</h6>
+<hr>
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(dplyr)</span>
+</pre></div>
+<div class="message"><pre class="knitr r">## 
+## Attaching package: 'dplyr'
+</pre></div>
+<div class="message"><pre class="knitr r">## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+</pre></div>
+<div class="message"><pre class="knitr r">## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+</pre></div>
+</div></div>
+
+<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest</span> <span class="hl kwb">&lt;-</span> <span class="hl std">ggplot2</span><span class="hl opt">::</span><span class="hl std">midwest</span>
+<span class="hl std">midwest</span><span class="hl kwb">&lt;-</span><span class="hl kwd">as.data.frame</span><span class="hl std">(midwest)</span>
+<span class="hl std">midwest</span><span class="hl kwb">&lt;-</span><span class="hl std">midwest</span><span class="hl opt">%&gt;%</span><span class="hl kwd">mutate</span><span class="hl std">(</span><span class="hl kwc">percyouth</span><span class="hl std">=((poptotal</span><span class="hl opt">-</span><span class="hl std">popadults)</span><span class="hl opt">/</span><span class="hl std">poptotal)</span><span class="hl opt">*</span><span class="hl num">100</span><span class="hl std">)</span>
+</pre></div>
+</div></div>
+
+<p>문제 조건에 맞게 오름차순으로 추출한 전체 테이블을 확인하면 아래와 같다.</p>
+<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">group_by</span><span class="hl std">(state)</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">percyouth_mean</span><span class="hl std">=</span><span class="hl kwd">mean</span><span class="hl std">(percyouth,</span><span class="hl kwc">na.rm</span> <span class="hl std">= T))</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">arrange</span><span class="hl std">(percyouth_mean)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## # A tibble: 5 x 2
+##   state percyouth_mean
+##   &lt;chr&gt;          &lt;dbl&gt;
+## 1 IL              35.0
+## 2 WI              35.9
+## 3 MI              35.9
+## 4 IN              36.6
+## 5 OH              36.8
+</pre></div>
+</div></div>
+
+<p>가장 낮은 지역을 출력하는 결과를 출력하는 코드</p>
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">(midwest</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">group_by</span><span class="hl std">(state)</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">percyouth_mean</span><span class="hl std">=</span><span class="hl kwd">mean</span><span class="hl std">(percyouth,</span><span class="hl kwc">na.rm</span> <span class="hl std">= T))</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">arrange</span><span class="hl std">(percyouth_mean)</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">head</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl std">))</span><span class="hl opt">$</span><span class="hl std">state</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] &quot;IL&quot;
+</pre></div>
+</div></div>
+
+<p>가장 높은 지역을 출력하는 결과를 출력하는 코드</p>
+<div class="chunk" id="unnamed-chunk-5"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">(midwest</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">group_by</span><span class="hl std">(state)</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">percyouth_mean</span><span class="hl std">=</span><span class="hl kwd">mean</span><span class="hl std">(percyouth,</span><span class="hl kwc">na.rm</span> <span class="hl std">= T))</span><span class="hl opt">%&gt;%</span>
+  <span class="hl kwd">arrange</span><span class="hl std">(percyouth_mean)</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">tail</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl std">))</span><span class="hl opt">$</span><span class="hl std">state</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] &quot;OH&quot;
+</pre></div>
+</div></div>
+
+<hr>
+<h6 class="q" id="two">문제2: 주(state)별로 아시아인구백분율 평균을 구했을 때, 평균이 가장 높은 지역과 평균을 각각 구하시오.</h6>
+<hr>
+<h6 class="ans">정답 <br><br> 평균이 가장 높은 지역 : IN <br> 그 지역의 평균 : 0.3826576</h6>
+<hr>
+<p>평균이 가장 높은 지역을 출력하는 코드</p> 
+<div class="chunk" id="unnamed-chunk-6"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">(midwest</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">group_by</span><span class="hl std">(state)</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">percasian_mean</span><span class="hl std">=</span><span class="hl kwd">mean</span><span class="hl std">(percasian,</span><span class="hl kwc">na.rm</span> <span class="hl std">= T))</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">arrange</span><span class="hl std">(percasian_mean)</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">head</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl std">))</span><span class="hl opt">$</span><span class="hl std">state</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] &quot;IN&quot;
+</pre></div>
+</div></div>
+<p>평균이 가장 높은 지역의 평균 출력하는 코드</p> 
+<div class="chunk" id="unnamed-chunk-7"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">(midwest</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">group_by</span><span class="hl std">(state)</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">percasian_mean</span><span class="hl std">=</span><span class="hl kwd">mean</span><span class="hl std">(percasian,</span><span class="hl kwc">na.rm</span> <span class="hl std">= T))</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">arrange</span><span class="hl std">(percasian_mean)</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">head</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl std">))</span><span class="hl opt">$</span><span class="hl std">percasian_mean</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 0.3826576
+</pre></div>
+</div></div>
+<hr>
+<h6 class="q" id="three">문제3: 아래 표를 참고하여 새로운 변수 grade를 만드시오.</h6>
+<hr>
+<p>사전 데이터 프레임 작업</p>
+<div class="chunk" id="unnamed-chunk-8"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest</span><span class="hl kwb">&lt;-</span><span class="hl std">midwest</span><span class="hl opt">%&gt;%</span><span class="hl kwd">mutate</span><span class="hl std">(</span><span class="hl kwc">group</span><span class="hl std">=</span><span class="hl kwd">ifelse</span><span class="hl std">(percyouth</span><span class="hl opt">&gt;=</span><span class="hl num">40</span><span class="hl std">,</span><span class="hl str">&quot;large&quot;</span><span class="hl std">,</span><span class="hl kwd">ifelse</span>
+                                       <span class="hl std">(percyouth</span><span class="hl opt">&gt;=</span><span class="hl num">30</span><span class="hl opt">&amp;</span><span class="hl std">percyouth</span><span class="hl opt">&lt;</span><span class="hl num">40</span><span class="hl std">,</span><span class="hl str">&quot;middle&quot;</span><span class="hl std">,</span><span class="hl str">&quot;small&quot;</span><span class="hl std">)))</span>
+<span class="hl std">midwest_add1</span><span class="hl kwb">&lt;-</span><span class="hl kwd">read.csv</span><span class="hl std">(</span><span class="hl str">&quot;./school/data/midwest_add.csv&quot;</span><span class="hl std">,</span><span class="hl kwc">fileEncoding</span> <span class="hl std">=</span><span class="hl str">&quot;euc-kr&quot;</span><span class="hl std">,</span><span class="hl kwc">stringsAsFactors</span> <span class="hl std">= F)</span>
+<span class="hl com">#PID가 있는 열</span>
+<span class="hl std">midwest_add2</span><span class="hl kwb">&lt;-</span><span class="hl kwd">read.csv</span><span class="hl std">(</span><span class="hl str">&quot;./school/data/midwest_add2.csv&quot;</span><span class="hl std">,</span><span class="hl kwc">fileEncoding</span> <span class="hl std">=</span><span class="hl str">&quot;euc-kr&quot;</span><span class="hl std">,</span><span class="hl kwc">stringsAsFactors</span> <span class="hl std">= F)</span>
+
+<span class="hl com">#region=county 기준 병합</span>
+<span class="hl std">midwest_region</span><span class="hl kwb">&lt;-</span><span class="hl kwd">left_join</span><span class="hl std">(midwest,midwest_add1,</span><span class="hl kwc">by</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;county&quot;</span><span class="hl std">=</span><span class="hl str">&quot;region&quot;</span><span class="hl std">))</span>
+<span class="hl std">midwest_region</span><span class="hl kwb">&lt;-</span><span class="hl std">midwest_region</span><span class="hl opt">%&gt;%</span><span class="hl kwd">distinct</span><span class="hl std">(PID,county,state,</span><span class="hl kwc">.keep_all</span> <span class="hl std">= T)</span>
+<span class="hl com">#PID 기준 병합</span>
+<span class="hl std">midwest_PID</span><span class="hl kwb">&lt;-</span><span class="hl kwd">left_join</span><span class="hl std">(midwest,midwest_add2,</span><span class="hl kwc">by</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;PID&quot;</span><span class="hl std">=</span><span class="hl str">&quot;PID&quot;</span><span class="hl std">))</span>
+</pre></div>
+</div></div>
+<p>PID을 공통 열로 병합한 버전</p>
+<div class="chunk" id="unnamed-chunk-9"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest_PID</span><span class="hl kwb">&lt;-</span><span class="hl std">midwest_PID</span><span class="hl opt">%&gt;%</span><span class="hl kwd">mutate</span><span class="hl std">(</span><span class="hl kwc">percseni</span><span class="hl std">=((senior</span><span class="hl opt">/</span><span class="hl std">poptotal)</span><span class="hl opt">*</span><span class="hl num">100</span><span class="hl std">))</span>
+<span class="hl std">midwest_PID</span><span class="hl kwb">&lt;-</span><span class="hl std">midwest_PID</span><span class="hl opt">%&gt;%</span><span class="hl kwd">mutate</span><span class="hl std">(</span><span class="hl kwc">grade</span><span class="hl std">=</span><span class="hl kwd">ifelse</span><span class="hl std">(percseni</span><span class="hl opt">&gt;=</span><span class="hl num">15</span><span class="hl std">,</span><span class="hl str">&quot;very large&quot;</span><span class="hl std">,</span><span class="hl kwd">ifelse</span>
+                                       <span class="hl std">(percseni</span><span class="hl opt">&gt;=</span><span class="hl num">8</span><span class="hl opt">&amp;</span><span class="hl std">percseni</span><span class="hl opt">&lt;</span><span class="hl num">15</span><span class="hl std">,</span><span class="hl str">&quot;large&quot;</span><span class="hl std">,</span>
+                                         <span class="hl kwd">ifelse</span><span class="hl std">(percseni</span><span class="hl opt">&gt;=</span><span class="hl num">5</span><span class="hl opt">&amp;</span><span class="hl std">percseni</span><span class="hl opt">&lt;</span><span class="hl num">8</span><span class="hl std">,</span>
+                                           <span class="hl str">&quot;middle&quot;</span><span class="hl std">,</span><span class="hl str">&quot;small&quot;</span><span class="hl std">))))</span>
+</pre></div>
+</div></div>
+<p>region과 county를 기준으로 병합한 버전</p>
+<div class="chunk" id="unnamed-chunk-10"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest_region</span><span class="hl kwb">&lt;-</span><span class="hl std">midwest_region</span><span class="hl opt">%&gt;%</span><span class="hl kwd">mutate</span><span class="hl std">(</span><span class="hl kwc">percseni</span><span class="hl std">=((senior</span><span class="hl opt">/</span><span class="hl std">poptotal)</span><span class="hl opt">*</span><span class="hl num">100</span><span class="hl std">))</span>
+
+<span class="hl std">midwest_region</span><span class="hl kwb">&lt;-</span><span class="hl std">midwest_region</span><span class="hl opt">%&gt;%</span><span class="hl kwd">mutate</span><span class="hl std">(</span><span class="hl kwc">grade</span><span class="hl std">=</span><span class="hl kwd">ifelse</span><span class="hl std">(percseni</span><span class="hl opt">&gt;=</span><span class="hl num">15</span><span class="hl std">,</span><span class="hl str">&quot;very large&quot;</span><span class="hl std">,</span><span class="hl kwd">ifelse</span>
+                                                   <span class="hl std">(percseni</span><span class="hl opt">&gt;=</span><span class="hl num">8</span><span class="hl opt">&amp;</span><span class="hl std">percseni</span><span class="hl opt">&lt;</span><span class="hl num">15</span><span class="hl std">,</span><span class="hl str">&quot;large&quot;</span><span class="hl std">,</span>
+                                                     <span class="hl kwd">ifelse</span><span class="hl std">(percseni</span><span class="hl opt">&gt;=</span><span class="hl num">5</span><span class="hl opt">&amp;</span><span class="hl std">percseni</span><span class="hl opt">&lt;</span><span class="hl num">8</span><span class="hl std">,</span>
+                                                            <span class="hl str">&quot;middle&quot;</span><span class="hl std">,</span><span class="hl str">&quot;small&quot;</span><span class="hl std">))))</span>
+</pre></div>
+</div></div>
+<p>변수 확인(PID)</p>
+<div class="chunk" id="unnamed-chunk-11"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest_PID</span><span class="hl opt">$</span><span class="hl std">grade</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##   [1] &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+##   [6] &quot;small&quot;      &quot;middle&quot;     &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;     
+##  [11] NA           &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [16] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [21] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;     
+##  [26] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [31] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [36] &quot;middle&quot;     NA           &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+##  [41] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;     
+##  [46] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [51] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [56] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [61] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;     
+##  [66] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [71] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+##  [76] &quot;very large&quot; &quot;large&quot;      &quot;large&quot;      &quot;small&quot;      &quot;middle&quot;    
+##  [81] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+##  [86] &quot;very large&quot; &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [91] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [96] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [101] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [106] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [111] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;     
+## [116] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [121] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [126] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [131] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      NA          
+## [136] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [141] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [146] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [151] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [156] &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;very large&quot;
+## [161] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;middle&quot;    
+## [166] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [171] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [176] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [181] &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;     
+## [186] &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;     
+## [191] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;     
+## [196] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [201] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [206] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [211] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [216] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [221] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [226] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      NA           &quot;small&quot;     
+## [231] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [236] &quot;very large&quot; &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;     
+## [241] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [246] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [251] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;     
+## [256] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [261] &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [266] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [271] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [276] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [281] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [286] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [291] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [296] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [301] &quot;small&quot;      NA           &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [306] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [311] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [316] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [321] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [326] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [331] &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;     
+## [336] &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;     
+## [341] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [346] &quot;small&quot;      NA           &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [351] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [356] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [361] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [366] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;     
+## [371] &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [376] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [381] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;     
+## [386] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [391] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [396] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [401] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;very large&quot;
+## [406] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [411] &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [416] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      NA           &quot;small&quot;     
+## [421] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [426] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [431] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [436] &quot;small&quot;      &quot;small&quot;
+</pre></div>
+</div></div>
+<p>변수 확인(region)</p>
+<div class="chunk" id="unnamed-chunk-12"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest_region</span><span class="hl opt">$</span><span class="hl std">grade</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##   [1] &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+##   [6] &quot;small&quot;      &quot;middle&quot;     &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;     
+##  [11] NA           &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [16] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [21] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;     
+##  [26] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [31] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [36] &quot;middle&quot;     NA           &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+##  [41] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;     
+##  [46] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [51] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [56] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [61] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;     
+##  [66] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [71] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+##  [76] &quot;very large&quot; &quot;large&quot;      &quot;large&quot;      &quot;small&quot;      &quot;middle&quot;    
+##  [81] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+##  [86] &quot;very large&quot; &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [91] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+##  [96] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [101] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [106] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+## [111] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [116] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [121] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [126] &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [131] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      NA          
+## [136] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [141] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [146] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [151] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [156] &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;very large&quot;
+## [161] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+## [166] &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;     
+## [171] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [176] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [181] &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;     
+## [186] &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;     
+## [191] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;     
+## [196] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [201] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [206] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [211] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [216] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [221] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [226] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      NA           &quot;small&quot;     
+## [231] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [236] &quot;very large&quot; &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;     
+## [241] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [246] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [251] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;     
+## [256] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [261] &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [266] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [271] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [276] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [281] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [286] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [291] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [296] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [301] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [306] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [311] &quot;small&quot;      NA           &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [316] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [321] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [326] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [331] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+## [336] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [341] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [346] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [351] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [356] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [361] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [366] &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;      &quot;middle&quot;     &quot;small&quot;     
+## [371] &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [376] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [381] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;large&quot;      &quot;small&quot;     
+## [386] &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [391] &quot;middle&quot;     &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [396] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [401] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;    
+## [406] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [411] &quot;small&quot;      &quot;large&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [416] &quot;small&quot;      &quot;small&quot;      &quot;middle&quot;     NA           &quot;small&quot;     
+## [421] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [426] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [431] &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;      &quot;small&quot;     
+## [436] &quot;small&quot;      &quot;small&quot;
+</pre></div>
+</div></div>
+
+<hr>
+<h6 class="q" id="four">문제4: grade에 대한 빈도를 구하시오. </h6>
+<hr>
+<p>PID로 병합한 버전</p>
+<div class="chunk" id="unnamed-chunk-13"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">table</span><span class="hl std">(midwest_PID</span><span class="hl opt">$</span><span class="hl std">grade)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## 
+##      large     middle      small very large 
+##         18         18        389          5
+</pre></div>
+</div></div>
+
+<p>region과 county를 기준으로 병합한 버전</p>
+<div class="chunk" id="unnamed-chunk-14"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">table</span><span class="hl std">(midwest_region</span><span class="hl opt">$</span><span class="hl std">grade)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## 
+##      large     middle      small very large 
+##         15         24        388          4
+</pre></div>
+</div></div>
+<hr>
+
+<h6 class="q" id="five"> 문제5: midwest_income.csv에는 county별로 1인당 연간 소득(단위: 달러) 변수 income을 포함하고 있다.<br>
+동일한 이름의 데이터 프레임을 만들고 midwest와 midwest_income을 통합한 후, income 전체 평균을 구하시오. </h6>
+<hr>
+<h6 class="ans">정답<br><br>67266.05</h6>
+<hr>
+<div class="chunk" id="unnamed-chunk-15"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest_income</span><span class="hl kwb">&lt;-</span><span class="hl kwd">read.csv</span><span class="hl std">(</span><span class="hl str">&quot;./school/data/midwest_income.csv&quot;</span><span class="hl std">,</span><span class="hl kwc">fileEncoding</span> <span class="hl std">=</span><span class="hl str">&quot;euc-kr&quot;</span><span class="hl std">,</span><span class="hl kwc">stringsAsFactors</span> <span class="hl std">= F)</span>
+<span class="hl std">midwest_PID</span><span class="hl kwb">&lt;-</span><span class="hl kwd">left_join</span><span class="hl std">(midwest_PID,midwest_income,</span><span class="hl kwc">by</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;PID&quot;</span><span class="hl std">=</span><span class="hl str">&quot;PID&quot;</span><span class="hl std">))</span>
+<span class="hl kwd">mean</span><span class="hl std">(midwest_PID</span><span class="hl opt">$</span><span class="hl std">income,</span> <span class="hl kwc">na.rm</span> <span class="hl std">= T)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 67266.05
+</pre></div>
+</div></div>
+<hr>
+<h6 class="q" id="six">문제6: 미성년인구비율이 40%이상이고, senior 비율이 5% 미만인 county의 연간소득 평균값은 얼마인가?</h6>
+<hr>
+<h6 class="ans">정답<br><br>73610.13</h6>
+<hr>
+<p>county-region과 PID 둘 다 해 본 결과, PID 병합이나 county-region 병합이나 결과가 동일하게 나옴.</p>
+<div class="chunk" id="unnamed-chunk-16"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">midwest_PID</span><span class="hl opt">%&gt;%</span><span class="hl kwd">filter</span><span class="hl std">(percyouth</span><span class="hl opt">&gt;=</span><span class="hl num">40</span><span class="hl opt">&amp;</span><span class="hl std">percseni</span><span class="hl opt">&lt;</span><span class="hl num">5</span><span class="hl std">)</span><span class="hl opt">%&gt;%</span><span class="hl kwd">select</span><span class="hl std">(county,income)</span><span class="hl opt">%&gt;%</span><span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">mean_income</span><span class="hl std">=</span><span class="hl kwd">mean</span><span class="hl std">(income))</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##   mean_income
+## 1    73610.13
+</pre></div>
+</div></div>
+</div>
+<div class="foot" id="footer">
+    <h6 id="footer-text" >made.by.ssook<br><br>
+        <a class="footer-btn" href="https://github.com/ssook1222" target='_blank'>
+            <img class="img" src="../../github.png">
+        </a>
+        <a class="footer-btn" href="https://velog.io/@ssook1222" target='_blank'>
+            <img class="img" src="../../vimeo.png">
+        </a>
+    </h6>
+</div>
+
+</body>
+</html>
