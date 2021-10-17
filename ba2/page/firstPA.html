@@ -157,7 +157,7 @@
     <hr>
 <h6 class="q" id="one">문제1: 주(state)별로 미성년인구백분율 평균을 구했을 때, 평균이 가장 낮은 지역과 평균을 각각 구하시오.</h6>
 <hr>
-<h6 class="ans">정답 <br><br> 평균이 가장 낮은 지역 : IL <br> 평균이 가장 높은 지역 : OH</h6>
+<h6 class="ans">정답 <br><br> 평균이 가장 낮은 지역 : IL <br> 평균: 35.0</h6>
 <hr>
 <div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(dplyr)</span>
 </pre></div>
@@ -222,16 +222,16 @@
 <hr>
 <h6 class="q" id="two">문제2: 주(state)별로 아시아인구백분율 평균을 구했을 때, 평균이 가장 높은 지역과 평균을 각각 구하시오.</h6>
 <hr>
-<h6 class="ans">정답 <br><br> 평균이 가장 높은 지역 : IN <br> 그 지역의 평균 : 0.3826576</h6>
+<h6 class="ans">정답 <br><br> 평균이 가장 높은 지역 : IL <br> 그 지역의 평균 : 0.570</h6>
 <hr>
 <p>평균이 가장 높은 지역을 출력하는 코드</p> 
 <div class="chunk" id="unnamed-chunk-6"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">(midwest</span><span class="hl opt">%&gt;%</span>
     <span class="hl kwd">group_by</span><span class="hl std">(state)</span><span class="hl opt">%&gt;%</span>
     <span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">percasian_mean</span><span class="hl std">=</span><span class="hl kwd">mean</span><span class="hl std">(percasian,</span><span class="hl kwc">na.rm</span> <span class="hl std">= T))</span><span class="hl opt">%&gt;%</span>
-    <span class="hl kwd">arrange</span><span class="hl std">(percasian_mean)</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">arrange</span><span class="hl std">(-percasian_mean)</span><span class="hl opt">%&gt;%</span>
     <span class="hl kwd">head</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl std">))</span><span class="hl opt">$</span><span class="hl std">state</span>
 </pre></div>
-<div class="output"><pre class="knitr r">## [1] &quot;IN&quot;
+<div class="output"><pre class="knitr r">## [1] &quot;IL&quot;
 </pre></div>
 </div></div>
 <p>평균이 가장 높은 지역의 평균 출력하는 코드</p> 
@@ -241,7 +241,7 @@
     <span class="hl kwd">arrange</span><span class="hl std">(percasian_mean)</span><span class="hl opt">%&gt;%</span>
     <span class="hl kwd">head</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl std">))</span><span class="hl opt">$</span><span class="hl std">percasian_mean</span>
 </pre></div>
-<div class="output"><pre class="knitr r">## [1] 0.3826576
+<div class="output"><pre class="knitr r">## [1] 0.570
 </pre></div>
 </div></div>
 <hr>
