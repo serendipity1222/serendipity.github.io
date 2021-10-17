@@ -237,7 +237,7 @@
 <div class="chunk" id="unnamed-chunk-7"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">(midwest</span><span class="hl opt">%&gt;%</span>
     <span class="hl kwd">group_by</span><span class="hl std">(state)</span><span class="hl opt">%&gt;%</span>
     <span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">percasian_mean</span><span class="hl std">=</span><span class="hl kwd">mean</span><span class="hl std">(percasian,</span><span class="hl kwc">na.rm</span> <span class="hl std">= T))</span><span class="hl opt">%&gt;%</span>
-    <span class="hl kwd">arrange</span><span class="hl std">(percasian_mean)</span><span class="hl opt">%&gt;%</span>
+    <span class="hl kwd">arrange</span><span class="hl std">(-percasian_mean)</span><span class="hl opt">%&gt;%</span>
     <span class="hl kwd">head</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl std">))</span><span class="hl opt">$</span><span class="hl std">percasian_mean</span>
 </pre></div>
 <div class="output"><pre class="knitr r">## [1] 0.570
